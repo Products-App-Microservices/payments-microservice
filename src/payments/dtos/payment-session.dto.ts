@@ -6,6 +6,9 @@ import { Type } from "class-transformer";
 export class PaymentSessionDto {
 
     @IsString()
+    orderId: string;
+
+    @IsString()
     currency: string;
 
     @IsArray()
