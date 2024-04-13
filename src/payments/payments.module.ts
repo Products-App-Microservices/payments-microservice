@@ -1,10 +1,15 @@
+import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
+
 import { PaymentsService } from './payments.service';
 import { PaymentsController } from './payments.controller';
-import { ConfigModule } from '@nestjs/config';
+import { NatsModule } from 'src/transports/nats.module';
 
 @Module({
-  imports: [ConfigModule],
+  imports: [
+    ConfigModule,
+    NatsModule,
+  ],
   controllers: [PaymentsController],
   providers: [PaymentsService],
 })
